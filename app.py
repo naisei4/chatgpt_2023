@@ -66,7 +66,7 @@ if mode == "***回答***":
           あなたは{テーマ}の専門家です。クライアントの質問に対して簡潔に説明し、それに関する4択の質問を出してください。
           """))
           st.text("うぇかぴぽ")
-          
+          index = GPTVectorStoreIndex.from_documents(documents, service_context=service_context)
           return index
 
 
