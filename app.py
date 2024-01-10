@@ -23,7 +23,7 @@ class ShiftJISToUTF8WebPageReader(SimpleWebPageReader):
 
 def is_shift_jis(response):
     content = response.text
-    st.text("判定します")
+    st.text(content)
     if 'charset=Shift_JIS' in content:
         st.text("Shift_jis変換します")
         return True
@@ -54,7 +54,6 @@ if mode == "***回答***":
               reader = csv.reader(f)
               for row in reader:
                   if row[0].endswith(".html"):
-                      st.text("判定前")
                       if is_shift_jis(requests.get(row[0])):
                           loader = ShiftJISToUTF8WebPageReader()
                       else:
