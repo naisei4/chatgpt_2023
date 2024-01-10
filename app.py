@@ -25,10 +25,8 @@ def is_shift_jis(response):
     content = response.text
     if 'charset=Shift_JIS' in content:
         st.text("Shift_jis変換します")
-        st.text(content)
         return True
     else:
-        st.text(content)
         return False
 
 st.set_page_config(page_title="Chat with the Streamlit docs, powered by LlamaIndex", page_icon="🦙", layout="centered", initial_sidebar_state="auto", menu_items=None)
